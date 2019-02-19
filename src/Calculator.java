@@ -36,8 +36,15 @@ public class Calculator
     {
         int a = Integer.parseInt(tokens[1]); // Throws NumberFormatException if the second token is not an int value.
         // TODO: complete this...
-        
-        return 0;
+        if (tokens[0].equalsIgnoreCase("negate")) {
+        	return a - (2 * a);
+        }
+        else if (tokens[0].equalsIgnoreCase("halve")) {
+        	return a / 2;
+        }
+        else {
+        	throw new CalculatorException("Illeegal Command");
+        }
     }
 
     /**
@@ -72,6 +79,20 @@ public class Calculator
             throws ArithmeticException, NumberFormatException, CalculatorException
     {
         // TODO: complete this...
+    	int a = Integer.parseInt(tokens[0]);
+    	int b = Integer.parseInt(tokens[2]);
+    	if (tokens[1].equals("+")) {
+    		return a + b;
+    	}
+    	else if (tokens[1].equals("-")) {
+    		return a - b;
+    	}
+    	else if (tokens[1].equals("/")) {
+    		return a / b;
+    	}
+    	else {
+    		throw new CalculatorException("Illeegal Command");
+    	}
     }
 
     /**
