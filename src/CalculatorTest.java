@@ -305,7 +305,7 @@ public class CalculatorTest {
      * Test correct parseAndExecution of command (input of "quit"):
      * @throws CalculatorException 
      */
-    public void parseAndExecuteTestValidQuit() throws AssertException, CalculatorException
+    public void parseAndExecuteTestValidQuit() throws AssertException
     {
         String result = Calculator.parseAndExecute("quit");
         Assert.assertEquals("quit", result);
@@ -315,7 +315,7 @@ public class CalculatorTest {
      * Test correct parseAndExecution of command (any valid 2 or 3 token command):
      * @throws CalculatorException 
      */
-    public void parseAndExecuteTestValidCommand() throws AssertException, CalculatorException
+    public void parseAndExecuteTestValidCommand() throws AssertException
     {
         String result = Calculator.parseAndExecute("5 + 6");
         Assert.assertEquals("The result is: 11", result);
@@ -325,7 +325,7 @@ public class CalculatorTest {
      * Test incorrect parseAndExecution of command (divide by zero):
      * @throws CalculatorException 
      */
-    public void parseAndExecuteTestDivideByZero() throws AssertException, CalculatorException
+    public void parseAndExecuteTestDivideByZero() throws AssertException
     {
         // TODO: complete this test...
             String result = Calculator.parseAndExecute("6 / 0");
@@ -337,7 +337,7 @@ public class CalculatorTest {
      * Test incorrect parseAndExecution of command (2 or 3 token command with invalid number):
      * @throws CalculatorException 
      */
-    public void parseAndExecuteTestInvalidNumber() throws AssertException, CalculatorException
+    public void parseAndExecuteTestInvalidNumber() throws AssertException
     {
         // TODO: complete this test...
     	//two token
@@ -352,7 +352,7 @@ public class CalculatorTest {
      * Test incorrect parseAndExecution of command (invalid command):
      * @throws CalculatorException 
      */
-    public void parseAndExecuteTestInvalidCommand() throws AssertException, CalculatorException
+    public void parseAndExecuteTestInvalidCommand() throws AssertException
     {
         String result = Calculator.parseAndExecute("foo 6");
         Assert.assertEquals("Calculator Exception, message is: Illegal Command", result);
@@ -362,7 +362,7 @@ public class CalculatorTest {
      * Test incorrect parseAndExecution of command (invalid token length):
      * @throws CalculatorException 
      */
-    public void parseAndExecuteTestInvalidTokenLength() throws AssertException, CalculatorException
+    public void parseAndExecuteTestInvalidTokenLength() throws AssertException
     {
         // TODO: complete this test...
 

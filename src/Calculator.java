@@ -178,7 +178,7 @@ public class Calculator
      * CalculatorException - a CalculatorException has been caught.
      * @throws CalculatorException 
      */
-    public static String parseAndExecute(String input) throws CalculatorException
+    public static String parseAndExecute(String input)
     {
         // TODO: complete this...
     	String[] tokens = input.split(" ");
