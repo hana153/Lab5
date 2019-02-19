@@ -21,8 +21,9 @@ public class Driver {
     /**
      * @param args Not used
      * @throws IOException If there is an IO error
+     * @throws CalculatorException 
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, CalculatorException {
 
         // Open standard in for input
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

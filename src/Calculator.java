@@ -43,7 +43,7 @@ public class Calculator
         	return a / 2;
         }
         else {
-        	throw new CalculatorException("Illeegal Command");
+        	throw new CalculatorException("Illegal Command");
         }
     }
 
@@ -91,7 +91,7 @@ public class Calculator
     		return a / b;
     	}
     	else {
-    		throw new CalculatorException("Illeegal Command");
+    		throw new CalculatorException("Illegal Command");
     	}
     }
 
@@ -130,7 +130,7 @@ public class Calculator
         {
             // TODO: complete this...
         case 0:
-        	throw new CalculatorException("Illegal Token Length");
+        		throw new CalculatorException("Illegal Token Length");
         case 1:
         	if (tokens[0].equals("quit")) {
         		return Integer.MIN_VALUE;
@@ -202,6 +202,5 @@ public class Calculator
     	}
         // Hint: you should try and call execute(). If execute encounters an error, it will throw an exception. This
         // method will catch those exceptions and respond accordingly.
-    	return null;
     }
 }
