@@ -36,6 +36,8 @@ public class Calculator
     {
         int a = Integer.parseInt(tokens[1]); // Throws NumberFormatException if the second token is not an int value.
         // TODO: complete this...
+        
+        return 0;
     }
 
     /**
@@ -106,6 +108,21 @@ public class Calculator
         switch(tokens.length)
         {
             // TODO: complete this...
+        case 0:
+        	throw new CalculatorException("Illegal Token Length");
+        case 1:
+        	if (tokens[0].equals("quit")) {
+        		return Integer.MIN_VALUE;
+        	}
+        	else {
+        		throw new CalculatorException("Illegal Command");
+        	}
+        case 2:
+        	return calculateTwoTokens(tokens);
+        case 3:
+        	return calculateThreeTokens(tokens);
+        default:
+        	throw new CalculatorException("Illegal Token Length");
         }
 
     }
@@ -138,11 +155,32 @@ public class Calculator
      * (4) "Input number cannot be parsed to an int. Please try again." - a NumberFormat has been caught.
      * (5) "Calculator Exception, message is: %s", where %s is the message of a
      * CalculatorException - a CalculatorException has been caught.
+     * @throws CalculatorException 
      */
-    public static String parseAndExecute(String input)
+    public static String parseAndExecute(String input) throws CalculatorException
     {
         // TODO: complete this...
+    	String[] tokens = input.split(" ");
+    	
+    	try {
+    		int result = execute(tokens);
+    		if (result == Integer.MIN_VALUE) {
+    			return "quit";
+    		}
+    		
+    		return "The result is: " + result;
+    	}
+    	catch(NumberFormatException e) {
+    		return "Input number cannot be parsed to an int. Please try again.";
+    	}
+    	catch(CalculatorException e) {
+    		return "Calculator Exception, message is: " + e.getMessage();
+    	}
+    	catch(ArithmeticException e ) {
+    		return "Attempted to divide by 0. Please try again.";
+    	}
         // Hint: you should try and call execute(). If execute encounters an error, it will throw an exception. This
         // method will catch those exceptions and respond accordingly.
+    	return null;
     }
 }
