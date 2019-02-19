@@ -77,7 +77,7 @@ public class CalculatorTest {
         }
         catch (Exception e)
         {
-            Assert.fail("Unexpected Exception (not NumberFormatException) caught");
+            Assert.fail("Unexpected Exception (not CalculatorException) caught");
         }
     }
 
@@ -187,7 +187,7 @@ public class CalculatorTest {
         }
         catch (Exception e)
         {
-            Assert.fail("Unexpected Exception (not NumberFormatException) caught");
+            Assert.fail("Unexpected Exception (not CalculatorException) caught");
         }
     }
 
